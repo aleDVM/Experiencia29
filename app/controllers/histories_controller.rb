@@ -1,6 +1,6 @@
 class HistoriesController < ApplicationController
   before_action :set_history, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /histories
   # GET /histories.json
   def index
@@ -17,7 +17,7 @@ class HistoriesController < ApplicationController
     @history = History.new
   end
   def mi
-    @history = History.where(user: current_user)
+    @history = History.where(user: helpers.current_user)
   end
 
   # GET /histories/1/edit

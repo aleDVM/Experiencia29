@@ -1,4 +1,16 @@
 <div class="container">
   <h2>Mis historias</h2>
-  
+  <table class="table">
+    <tr>
+      <td>titulo</td>
+      <td>Contenido</td>
+    </tr>
+    <% @history.each do |h|%>
+    <tr>
+      <td><%= h.title%></td>
+      <td><%= h.content%></td>
+    </tr>
+  <%end%>
+  </table>
+
 </div>
