@@ -16,6 +16,9 @@ class HistoriesController < ApplicationController
   def new
     @history = History.new
   end
+  def mi
+    @history = History.where(user: current_user)
+  end
 
   # GET /histories/1/edit
   def edit
